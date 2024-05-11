@@ -77,7 +77,7 @@ public class SubArrayOR {
 		for (int i = 0; i < 32; i++) {
 			long zero = 0;
 			long allZeroes = 0;
-			// count no of zeroes in ith bit ? => i am not able to find how many zeroes are in ith bit
+			// count no of zeroes in ith bit 
 			for (int j = 0; j < n; j++) {
 				if ((A[j] & (1 << i)) == 0) {
 					zero++;
@@ -95,7 +95,6 @@ public class SubArrayOR {
 			}
 
 
-            //i know that ones is becoming negative
 			long ones = totalSubarrays - allZeroes;
 
 			res = (long)(res + (ones * Math.pow(2, i))%1000000007)%1000000007;
