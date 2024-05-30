@@ -84,7 +84,13 @@ public class AllPermutationsUniqueNumbers {
     public static void main(String[] args) {
     	int[] A = {1,2,3};
     	AllPermutationsUniqueNumbers permutations = new AllPermutationsUniqueNumbers();
-    	permutations.permute(A);
+    	int[][] res = permutations.permute(A);
+    	for(int i=0; i<res.length; i++) {
+    		for(int j=0; j<res[i].length; j++) {
+    			System.out.print(res[i][j]+" ");    		
+    		}
+    		System.out.println();
+    	}
     	
     }
 
