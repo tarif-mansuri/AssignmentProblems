@@ -17,18 +17,15 @@ public class PaintersPartitionProblem {
         while(l<=h){
             long mid = l+(h-l)/2;
             int peopleForMidTime = getPeople(arr, mid);
-            int peopleForMid_OneTime = getPeople(arr, mid-1);
+            //int peopleForMid_OneTime = getPeople(arr, mid-1);
 
-            if(peopleForMidTime<=A && peopleForMid_OneTime>A){
-                return (int)(mid%MOD);
-            }
-            if(peopleForMidTime<=A && peopleForMid_OneTime <=A) {
+            if(peopleForMidTime<=A){
             	h = mid-1;
             }else {
-            	l=mid+1;
+            	l = mid+1;
             }
         }
-        return -1;
+        return (int)l;
     }
     public int getPeople(long[] A, long T){
         long c=1;
@@ -40,7 +37,7 @@ public class PaintersPartitionProblem {
             if(A[i]<=remT){
                 remT = remT-A[i];
             }else{
-                remT = T;
+                remT = T-A[i];
                 c++;
             }
         }
