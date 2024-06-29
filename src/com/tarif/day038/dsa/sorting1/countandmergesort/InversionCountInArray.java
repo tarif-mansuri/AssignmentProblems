@@ -88,6 +88,7 @@ public class InversionCountInArray {
             if(arr1[i]<=arr2[j]) {
                 A[l++] = arr1[i++];
             }else {
+            	//ans = ans + (n1-i);
                 ans =(ans%1000000007+(n1-i)%1000000007)%1000000007;
                 A[l++] = arr2[j++];
             }
